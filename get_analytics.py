@@ -5,16 +5,12 @@ import requests
 # Конфигурация (правь под себя)
 # ===============================
 apps = [
-    {'id': 'id1434091635', 'name': 'Black Lines', 'platform': 'ios'}
-    , {'id': 'id6743713912', 'name': 'MotivaRise', 'platform': 'ios'}
-    , {'id': 'id6746459914', 'name': 'Glyphoria', 'platform': 'ios'}
-    , {'id': 'id6747419978', 'name': 'Mount Quizmore', 'platform': 'ios'}
-    , {'id': 'id6747675833', 'name': 'Written in Stone', 'platform': 'ios'}
-    , {'id': 'id6747964884', 'name': 'SoundsScape', 'platform': 'ios'}
-    , {'id': 'id6748456624', 'name': 'AviaQR', 'platform': 'ios'}
-    , {'id': 'id6748908145', 'name': 'Bubloonies', 'platform': 'ios'}
-    , {'id': 'id6749228997', 'name': 'Flagleap', 'platform': 'ios'}
-    , {'id': 'id6749614124', 'name': 'GlyphsQuest', 'platform': 'ios'}
+      #{'id': 'id6747419978', 'name': 'Mount Quizmore', 'platform': 'ios'}
+     #{'id': 'id6747675833', 'name': 'Written in Stone', 'platform': 'ios'}
+    # {'id': 'id6749614124', 'name': 'GlyphsQuest', 'platform': 'ios'}
+     {'id': 'id6751264734', 'name': 'Fyshermans Key', 'platform': 'ios'}
+     #{'id': 'id6751265804', 'name': 'AirCroco Bombino', 'platform': 'ios'}
+
  ]
 
 
@@ -27,7 +23,7 @@ for i in range(len(apps)):
     APP_ID = APP.get('id')            # ID риложения из get_apps_id.py
     REPORT_TYPE = "daily_report"        # https://chatgpt.com/s/t_68b7215da13481919630daec39bd6710 partners_report daily_report
     FROM_DATE = "2025-09-01"               # формат YYYY-MM-DD
-    TO_DATE = "2025-09-02"                 # формат YYYY-MM-DD
+    TO_DATE = "2025-09-08"                 # формат YYYY-MM-DD
     TIMEZONE = "UTC"                       # например Europe/Berlin
     RETARGETING = "false"                  # "true" или "false"
     OUTPUT_FILE = f"report/{REPORT_TYPE}{FROM_DATE}_{TO_DATE}_{APP.get('name')}.csv"
