@@ -15,11 +15,12 @@ uri = os.getenv("POSTGRES_URI")
 
 apps_client = AppsFlyerClient(api_token=token, base_url=url)
 
-apps_id = apps_client.list_apps()
-for i in range(len(apps_id)):
+apps = apps_client.list_apps()
+for i in range(len(apps)):
     apps_client.download_agg_report_to_file(
-        file_path = out_dir / f"{date.today().strftime('%m%d')}_report_{apps_id[i].name}_{i}.csv",
-        app_id=apps_id[i].id,
+        file_path = out_dir / f"{date.today().strftime('%m%d')}_report_{apps[i].name}_{i}.csv",
+        app_id=apps[i].id,
+        app_name=apps[i].name,
         report=ReportType.DAILY,
         date_from="2025-08-01",
         date_to="2025-09-02",
@@ -38,9 +39,10 @@ for i in range(len(apps_id)):
                 "Loyal Users/Installs": "loyal_users_installs",
                 "Total Cost":"total_cost",
                 "Average eCPI":"average_ecpi",
-                "apps_name": apps_id[i].name,
-                "device" : apps_id[i].platform
+                # "apps_name": apps_id[i].name,
+                # "device" : apps_id[i].platform
         },
+
 
     )
 

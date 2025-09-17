@@ -155,6 +155,7 @@ class AppsFlyerClient:
         self,
         file_path: str,
         app_id: str,
+        app_name: str,
         report: ReportType | str,
         *,
         date_from: str,
@@ -163,6 +164,7 @@ class AppsFlyerClient:
         retargeting: bool | str = False,
         extra_params: Optional[Dict[str, Any]] = None,
         columns_mapping: Optional[Dict[str, Optional[str]]] = None,
+
 
     ) -> None:
         """Скачивает отчёт и сохраняет в файл (целиком)."""
@@ -174,12 +176,14 @@ class AppsFlyerClient:
             timezone=timezone,
             retargeting=retargeting,
             extra_params=extra_params,
-            columns_mapping=columns_mapping
+            columns_mapping=columns_mapping,
+            app_name=app_name
         )
         if not rows:
             return
 
         print(os.getcwd())
+
 
         with open(file_path, "w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
@@ -189,6 +193,7 @@ class AppsFlyerClient:
     def fetch_agg_report_rows(
         self,
         app_id: str,
+        app_name: str,
         report: ReportType | str,
         *,
         date_from: str,
@@ -256,6 +261,7 @@ class AppsFlyerClient:
                 if not new_name:
                     continue
                 out[new_name] = normalize(value)
+                out['app_name'] = app_name
             return out
 
         if reader.fieldnames is None:
