@@ -12,6 +12,8 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Optional, Dict, Any, List
 
+from sqlalchemy.testing import rowset
+
 log = logging.getLogger(__name__)
 
 
@@ -154,8 +156,9 @@ class AppsFlyerClient:
     def download_agg_report_to_file(
         self,
         file_path: str,
-        app_id: str,
-        app_name: str,
+        apps: list[AppInfo],
+        # app_id: str,
+        # app_name: str,
         report: ReportType | str,
         *,
         date_from: str,
@@ -167,9 +170,10 @@ class AppsFlyerClient:
 
 
     ) -> None:
+        row = []
         """Скачивает отчёт и сохраняет в файл (целиком)."""
         rows = self.fetch_agg_report_rows(
-            app_id=app_id,
+            apps=apps,
             report=report,
             date_from=date_from,
             date_to=date_to,
@@ -177,12 +181,9 @@ class AppsFlyerClient:
             retargeting=retargeting,
             extra_params=extra_params,
             columns_mapping=columns_mapping,
-            app_name=app_name
         )
         if not rows:
             return
-
-        print(os.getcwd())
 
 
         with open(file_path, "w", encoding="utf-8", newline="") as f:
@@ -192,8 +193,7 @@ class AppsFlyerClient:
 
     def fetch_agg_report_rows(
         self,
-        app_id: str,
-        app_name: str,
+        apps,  # list[AppInfo] или list[dict] с ключами id/name/platform
         report: ReportType | str,
         *,
         date_from: str,
@@ -207,32 +207,29 @@ class AppsFlyerClient:
         null_tokens: Optional[List[str]] = None,
         empty_as_null: bool = True,
     ) -> List[Dict[str, Any]]:
-        """Возвращает агрегированный отчёт целиком как список словарей."""
-        if not app_id:
-            raise ValueError("app_id is required")
+        """Собирает единый датасет по списку приложений и возвращает список словарей."""
+
         if not date_from or not date_to:
             raise ValueError("date_from/date_to are required")
 
+        # helper: извлечь поля из AppInfo или dict
+        def _extract_app_fields(app) -> tuple[str, Optional[str], Optional[str]]:
+            if isinstance(app, dict):
+                return (
+                    str(app.get("id") or ""),
+                    app.get("name"),
+                    app.get("platform") or app.get("device"),
+                )
+            # AppInfo-like
+            return (
+                str(getattr(app, "id", "") or ""),
+                getattr(app, "name", None),
+                getattr(app, "platform", None),
+            )
+
         report_type = report.value if isinstance(report, ReportType) else str(report)
-        path = self.PATH_EXPORT_AGG.format(app_id=app_id, report_type=report_type)
 
-        params = {
-            "from": date_from,
-            "to": date_to,
-            "timezone": timezone,
-            "retargeting": "true" if retargeting else "false",
-        }
-        if extra_params:
-            params.update(extra_params)
-
-        resp = self._request("GET", path, params=params)
-        text = resp.content.decode(encoding, errors="replace")
-        if text.startswith("\ufeff"):
-            text = text.lstrip("\ufeff")
-
-        f = io.StringIO(text, newline="")
-        reader = csv.DictReader(f)
-
+        all_rows: list[Dict[str, Any]] = []
         drop_set = {"id", "name"} if drop_default else set()
         tokens = {t.lower() for t in (null_tokens or ["nan", "na", "n/a", "null", "none", "-", "—"])}
 
@@ -252,23 +249,54 @@ class AppsFlyerClient:
                 return s
             return v
 
-        def transform(row: Dict[str, Any]) -> Dict[str, Any]:
-            out: Dict[str, Any] = {}
-            for src, value in row.items():
-                if src in drop_set:
-                    continue
-                new_name = columns_mapping.get(src, src) if columns_mapping else src
-                if not new_name:
-                    continue
-                out[new_name] = normalize(value)
-                out['app_name'] = app_name
-            return out
+        for app in apps:
+            app_id, app_name, app_platform = _extract_app_fields(app)
+            if not app_id:
+                # пропускаем некорректный элемент
+                continue
 
-        if reader.fieldnames is None:
-            return []
+            path = self.PATH_EXPORT_AGG.format(app_id=app_id, report_type=report_type)
+            params = {
+                "from": date_from,
+                "to": date_to,
+                "timezone": timezone,
+                "retargeting": "true" if retargeting in (True, "true", "True", "1", 1) else "false",
+            }
+            if extra_params:
+                params.update(extra_params)
 
-        return [transform(r) for r in reader]
+            resp = self._request("GET", path, params=params)
+            text = resp.content.decode(encoding, errors="replace")
+            if text.startswith("\ufeff"):
+                text = text.lstrip("\ufeff")
 
+            f = io.StringIO(text, newline="")
+            reader = csv.DictReader(f)
+            if reader.fieldnames is None:
+                # пустой отчёт для этого приложения
+                continue
 
-# ===== Пример инициализации клиента =====
-# apps_client = AppsFlyerClient(api_token="YOUR_TOKEN_HERE")
+            for raw_row in reader:
+                # маппинг/дроп колонок
+                out: Dict[str, Any] = {}
+                if columns_mapping:
+                    for src, value in raw_row.items():
+                        if src in drop_set:
+                            continue
+                        new_name = columns_mapping.get(src, src)
+                        if not new_name:  # None/"" => дроп колонки
+                            continue
+                        out[new_name] = normalize(value)
+                else:
+                    for src, value in raw_row.items():
+                        if src in drop_set:
+                            continue
+                        out[src] = normalize(value)
+
+                # добавляем сведения о приложении
+                out["app_name"] = app_name
+                out["device"] = app_platform
+
+                all_rows.append(out)
+
+        return all_rows

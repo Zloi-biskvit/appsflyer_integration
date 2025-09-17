@@ -13,17 +13,19 @@ token = os.getenv("APPSFLYER_API_TOKEN")
 url = os.getenv("APPSFLYER_BASE_URL")
 uri = os.getenv("POSTGRES_URI")
 
-apps_client = AppsFlyerClient(api_token=token, base_url=url)
-
+DATE_FROM="2025-08-01",
+DATE_TO="2025-09-02",
+# Инициализация клиента
+apps_client = AppsFlyerClient(api_token=token)
+# Получаем id приложения
 apps = apps_client.list_apps()
-for i in range(len(apps)):
-    apps_client.download_agg_report_to_file(
-        file_path = out_dir / f"{date.today().strftime('%m%d')}_report_{apps[i].name}_{i}.csv",
-        app_id=apps[i].id,
-        app_name=apps[i].name,
+
+apps_client.download_agg_report_to_file(
+        apps=apps,
+        file_path = out_dir / f"{date.today().strftime('%m%d')}_report.csv",
         report=ReportType.DAILY,
-        date_from="2025-08-01",
-        date_to="2025-09-02",
+        date_from=DATE_FROM,
+        date_to=DATE_TO,
         columns_mapping = {
                 "Date": "date",
                 "Agency/PMD (af_prt)": "agency_pmd",
@@ -41,10 +43,39 @@ for i in range(len(apps)):
                 "Average eCPI":"average_ecpi",
                 # "apps_name": apps_id[i].name,
                 # "device" : apps_id[i].platform
-        },
+        }
+)
 
+# Собираем репорты и записываем это в csv
+# for i in range(len(apps)):
+#     apps_client.download_agg_report_to_file(
+#         file_path = out_dir / f"{date.today().strftime('%m%d')}_report_{apps[i].name}_{i}.csv",
+#         app_id=apps[i].id,
+#         app_name=apps[i].name,
+#         report=ReportType.DAILY,
+#         date_from=DATE_FROM,
+#         date_to=DATE_TO,
+#         columns_mapping = {
+#                 "Date": "date",
+#                 "Agency/PMD (af_prt)": "agency_pmd",
+#                 "Media Source (pid)": "media_source",
+#                 "Campaign (c)": "campaign",
+#                 "Impressions": "impressions",
+#                 "Clicks": "clicks",
+#                 "CTR":"ctr",
+#                 "Installs":"installs",
+#                 "Conversion Rate":"conversion_rate",
+#                 "Sessions":"sessions",
+#                 "Loyal Users":"loyal_users",
+#                 "Loyal Users/Installs": "loyal_users_installs",
+#                 "Total Cost":"total_cost",
+#                 "Average eCPI":"average_ecpi",
+#                 # "apps_name": apps_id[i].name,
+#                 # "device" : apps_id[i].platform
+#         },
+#
 
-    )
+    # )
 
 
 
