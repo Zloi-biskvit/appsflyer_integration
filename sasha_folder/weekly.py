@@ -9,7 +9,7 @@ from typing import Optional, Tuple, Dict, List
 import pandas as pd
 
 # === Настройки ===
-INPUT_DIRS = [Path("./report"), Path(".")]   # папки с daily_report*.csv
+INPUT_DIRS = [Path("../report"), Path("..")]   # папки с daily_report*.csv
 OUT_XLSX = Path("./summary_readable.xlsx")   # читаемый Excel
 OUT_CSV  = Path("./summary.csv")             # сводный CSV (по желанию)
 

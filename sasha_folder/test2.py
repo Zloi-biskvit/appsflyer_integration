@@ -14,7 +14,7 @@ from openpyxl.styles import Font, Alignment, numbers
 from openpyxl.utils import get_column_letter
 
 # === Конфиг ===
-REPORT_DIR = Path("./report")            # где лежат daily_report*.csv
+REPORT_DIR = Path("../report")            # где лежат daily_report*.csv
 OUT_XLSX   = REPORT_DIR / "summary_readable.xlsx"
 APPS_CACHE = REPORT_DIR / "apps_cache.json"  # {<app_id>: "<app_name>"}
 THEMES_JSON = Path("./themes.json")      # {"<app_id>|<name>": "Тематика", ...}
