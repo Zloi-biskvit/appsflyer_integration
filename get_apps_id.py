@@ -33,7 +33,10 @@ if response.status_code == 200:
         name = app.get("attributes", {}).get("name")
         platform = app.get("attributes", {}).get("platform")
         app_dict.append({"id": app_id, "name": name, "platform": platform})
-    print(app_dict)
+
+    # построчный вывод с нумерацией
+    for i, app in enumerate(app_dict, start=1):
+        print(f"{i}. {app['name']} ({app['platform']}) — ID: {app['id']}")
 else:
     print(f"Ошибка: {response.status_code}, {response.text}")
 
