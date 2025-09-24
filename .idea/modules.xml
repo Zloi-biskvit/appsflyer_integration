@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/appsflyer_integration.iml" filepath="$PROJECT_DIR$/.idea/appsflyer_integration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legacy/sx/.idea/appsflyer_integration.iml" filepath="$PROJECT_DIR$/legacy/sx/.idea/appsflyer_integration.iml" />
     </modules>
   </component>
 </project>
