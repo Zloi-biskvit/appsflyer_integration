@@ -13,8 +13,8 @@ token = os.getenv("APPSFLYER_API_TOKEN")
 url = os.getenv("APPSFLYER_BASE_URL")
 uri = os.getenv("POSTGRES_URI")
 
-DATE_FROM="2025-08-01",
-DATE_TO="2025-09-02",
+DATE_FROM="2025-09-08",
+DATE_TO="2025-09-22",
 # Инициализация клиента
 apps_client = AppsFlyerClient(api_token=token)
 # Получаем id приложения

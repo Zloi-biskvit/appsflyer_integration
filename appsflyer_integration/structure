@@ -1,0 +1,15 @@
+appsflyer_integration/
+├─ docker-compose.yml            # НОВЫЙ
+├─ .env.example                  # НОВЫЙ (скопируй в .env и заполни)
+├─ .gitignore                    # ДОПОЛНИ (см. ниже)
+├─ postgres-init/
+│  └─ 001_schema.sql            # НОВЫЙ
+├─ app/
+│  ├─ Dockerfile                 # НОВЫЙ
+│  ├─ requirements.txt           # НОВЫЙ
+│  ├─ etl_to_db.py               # НОВЫЙ (основной ETL)
+│  └─ af_client.py               # НОВЫЙ (микро-клиент AppsFlyer)
+└─ grafana/
+   └─ provisioning/
+      └─ datasources/
+         └─ datasource.yml       # НОВЫЙ

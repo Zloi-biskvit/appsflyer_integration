@@ -19,6 +19,7 @@ log = logging.getLogger(__name__)
 
 # ===== Модели / типы =====
 
+
 @dataclass(frozen=True)
 class AppInfo:
     id: str
