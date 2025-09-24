@@ -1,0 +1,16 @@
+﻿# OS/IDE
+.idea/
+.vscode/
+*.iml
+__pycache__/
+*.pyc
+
+# env & local
+.env
+.venv/
+pg_data/
+grafana_data/
+reports/
+
+# python cache
+*.egg-info/
