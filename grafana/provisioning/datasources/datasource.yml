@@ -6,10 +6,10 @@ datasources:
     isDefault: true
     editable: true
     url: postgres:5432
-    database: ${PG_DB}
-    user: ${PG_USER}
+    database: af
+    user: afuser
     secureJsonData:
-      password: ${PG_PASSWORD}
+      password: afpass
     jsonData:
       sslmode: "disable"
       postgresVersion: 1600

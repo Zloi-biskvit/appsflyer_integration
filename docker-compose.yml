@@ -5,7 +5,8 @@ services:
       POSTGRES_USER: ${PG_USER}
       POSTGRES_PASSWORD: ${PG_PASSWORD}
       POSTGRES_DB: ${PG_DB}
-    ports: ["5432:5432"]
+    ports:
+      - "5432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
       - ./postgres-init:/docker-entrypoint-initdb.d:ro
@@ -17,8 +18,8 @@ services:
     restart: unless-stopped
 
   etl:
-    build: app                   # ← обязательно!
-    env_file: legacy/sx/.env
+    build: ./app
+    env_file: .env
     depends_on:
       postgres:
         condition: service_healthy
@@ -27,8 +28,8 @@ services:
 
   grafana:
     image: grafana/grafana:11.1.0
-    pull_policy: always            # ← вставлено под image
-    ports: ["3000:3000"]
+    ports:
+      - "3000:3000"
     depends_on:
       postgres:
         condition: service_healthy
