@@ -6,14 +6,24 @@ import requests
 # ===============================
 apps = [
       #{'id': 'id6747419978', 'name': 'Mount Quizmore', 'platform': 'ios'}
-     #{'id': 'id6747675833', 'name': 'Written in Stone', 'platform': 'ios'}
-    # {'id': 'id6749614124', 'name': 'GlyphsQuest', 'platform': 'ios'}
-     {'id': 'id6751264734', 'name': 'Fyshermans Key', 'platform': 'ios'}
-     #{'id': 'id6751265804', 'name': 'AirCroco Bombino', 'platform': 'ios'}
+      #{'id': 'id6747675833', 'name': 'Written in Stone', 'platform': 'ios'}
+      # {'id': 'id6746459914', 'name': 'Glyphoria', 'platform': 'ios'}
+      #{'id': 'id6751264734', 'name': 'Fyshermans Key', 'platform': 'ios'}
+      #{'id': 'id6751265804', 'name': 'AirCroco Bombino', 'platform': 'ios'}
+      #{'id': 'id6747964884', 'name': 'SoundsScape', 'platform': 'ios'}
+      #{'id': 'id6752688000', 'name': 'Rabbit Trails', 'platform': 'ios'}
+      #{'id': 'id6749614124', 'name': 'GlyphsQuest', 'platform': 'ios'}
+      #{'id': 'id6751264734', 'name': 'Fyshermans Key', 'platform': 'ios'}
+      #{'id': 'id6751882513', 'name': 'Updraft Balloon', 'platform': 'ios'}
+      #{'id': 'id6752852232', 'name': 'DropsFlavor', 'platform': 'ios'}
+      #{'id': 'id6752889529', 'name': 'Carrae Ball', 'platform': 'ios'}
+      #{'id': 'id6753283611', 'name': 'Sky Lores', 'platform': 'ios'}
+      #{'id': 'id6753668687', 'name': 'CheckYouFerma', 'platform': 'ios'}
+      #{'id': 'id6753740122', 'name': 'NestKeeeper', 'platform': 'ios'}
+      #{'id': 'id6753740688', 'name': 'Rabbit Mood', 'platform': 'ios'}
+
 
  ]
-
-
 
 for i in range(len(apps)):
     # app_id = apps[i]['id']
