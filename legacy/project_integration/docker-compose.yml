@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: my_postgres
+    environment:
+      POSTGRES_USER: my_user
+      POSTGRES_PASSWORD: my_password
+      POSTGRES_DB: my_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    environment:
+      # Metabase внутренняя БД (по умолчанию h2, для начала можно не трогать)
+      MB_DB_FILE: /metabase.db
+      # Далее ты через веб-интерфейс сам подключишься к Postgres (db:5432)
+    volumes:
+      - metabase_data:/metabase-data
+
+volumes:
+  db_data:
+  metabase_data:

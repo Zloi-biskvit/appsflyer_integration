@@ -1,0 +1,7 @@
+psycopg2-binary
+requests
+urllib3
+sqlalchemy
+jinja2
+psycopg2
+pydantic

@@ -73,7 +73,7 @@ class PostgresqlAdapter:
         # ОДНА транзакция на всё: begin/commit управляется контекстом
         with engine.begin() as connection:
             # session-level настройки только локально в этой транзакции
-            connection.execute(text("SET LOCAL work_mem = '8GB'"))
+            # connection.execute(text("SET LOCAL work_mem = '8GB'"))
             if schema_name:
                 connection.execute(text(f"SET LOCAL SEARCH_PATH = {schema_name}"))
 
