@@ -1,0 +1,43 @@
+{
+  "apps": [
+        {"id": "id1434091635", "name": "Black Lines", "platform": "ios"},
+        {"id": "id6743713912", "name": "MotivaRise", "platform": "ios"},
+        {"id": "id6746459914", "name": "Glyphoria", "platform": "ios"},
+        {"id": "id6747419978", "name": "Mount Quizmore", "platform": "ios"},
+        {"id": "id6747675833", "name": "Written in Stone", "platform": "ios"},
+        {"id": "id6747964884", "name": "SoundsScape", "platform": "ios"},
+        {"id": "id6748456624", "name": "AviaQR", "platform": "ios"},
+        {"id": "id6748908145", "name": "Bubloonies", "platform": "ios"},
+        {"id": "id6749228997", "name": "Flagleap", "platform": "ios"},
+        {"id": "id6749614124", "name": "GlyphsQuest", "platform": "ios"},
+        {"id": "id6751264734", "name": "Fysherman`s Key", "platform": "ios"},
+        {"id": "id6751265804", "name": "AirCroco Bombino", "platform": "ios"},
+        {"id": "id6751882513", "name": "Updraft Balloon", "platform": "ios"},
+        {"id": "id6752244390", "name": "OceaniaMoons", "platform": "ios"},
+        {"id": "id6752688000", "name": "Rabbit Trails", "platform": "ios"},
+        {"id": "id6752852232", "name": "DropsFlavor", "platform": "ios"},
+        {"id": "id6752889529", "name": "Carrae Ball", "platform": "ios"},
+        {"id": "id6753283611", "name": "Sky Lores", "platform": "ios"},
+        {"id": "id6753668687", "name": "CheckYouFerma", "platform": "ios"},
+        {"id": "id6753740122", "name": "NestKeeeper", "platform": "ios"},
+        {"id": "id6753740688", "name": "Rabbit Mood", "platform": "ios"},
+        {"id": "id6753748304", "name": "Moona:Daily Energy Journal", "platform": "ios"},
+        {"id": "id6754025150", "name": "PlishkoBuild", "platform": "ios"},
+        {"id": "id6754025975", "name": "SearchMyFormula", "platform": "ios"},
+        {"id": "id6754026899", "name": "Bon-Bon Story Quest", "platform": "ios"},
+        {"id": "id6754033791", "name": "Olymera Elements", "platform": "ios"},
+        {"id": "id6754906767", "name": "KiloCalcAndy", "platform": "ios"}
+    ],
+
+  "api_token": "eyJhbGciOiJBMjU2S1ciLCJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwidHlwIjoiSldUIiwiemlwIjoiREVGIn0.Li6W7ltorTZaE8LwTiqP6NPHmSuKAOp4_tXDl3_7a4gshv2Ilc7UOg.pHYYwtBweI_g7coR.FrcIKUATiUNqLy_V5tsJF5kjQ6vHEU4oGjK-3qaMm66aYXoPSpTFpaCBS3dMnpeV5_Nd9c4ctWfm6bz9T7HSnk6cWbZEo05f0vtDeR0ly6dxgAzpBi5Hf2Cee_rW4e7eYGnvyr-qQ7rvEV88PgP8YeC32XQ-FiH858q1DpuMN9vma5_RaEI5npUxRx7aphZuaCiDyvyVLTMg-ANeJAGLiCAwfpHG1Yi4T6aEh9aRWvHtWOW8XbWXYffGZcXRJNMVCQqMWWH-02NvZ9Gb2_JR1wZBOkiBzG2CV8sAfY8tn1dCN7PCgiRNHUVIShjQoQNVtibSKIH7lm0AvcW1s96pnFsc.DmdBqF2VDtcEpP4TcIJx7A",
+  "agg_report_types": [
+    "geo_by_date_report"
+  ],
+  "from_date": "2025-11-10",
+  "to_date": "2025-11-16",
+  "timezone": "UTC",
+  "retargeting": "false",
+
+  "destination_table": "appsflyer",
+  "destination_uri": "postgresql://my_user:my_password@localhost:5432/my_db"
+}

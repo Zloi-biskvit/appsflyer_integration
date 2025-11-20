@@ -3,10 +3,10 @@ from __future__ import annotations
 
 from typing import Any, Dict, List
 
-from config import Config
-from appsflyer_client import AppsFlyerClient
-from postgresql_adapter import PostgresqlAdapter
-from models import AppsFlyerRecord
+from .config import Config
+from .appsflyer_client import AppsFlyerClient
+from .postgresql_adapter import PostgresqlAdapter
+from .models import AppsFlyerRecord
 
 # Маппинг "как в CSV" -> "как в таблице Postgres"
 COLUMN_RENAME_MAP: Dict[str, str] = {
@@ -107,5 +107,5 @@ class IntegrationService:
                 except Exception as e:
                     print("  ERROR:", repr(e))
 
-            all_rows = normalize_rows(all_rows)
-            self._insert_to_db(all_rows)
+                all_rows = normalize_rows(all_rows)
+                self._insert_to_db(all_rows)

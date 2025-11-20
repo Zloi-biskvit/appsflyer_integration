@@ -3,7 +3,8 @@ from pathlib import Path
 from typing import Any, Dict, List
 import json
 
-CONFIG_PATH = Path("config.json")
+BASE_DIR = Path(__file__).resolve().parent.parent
+CONFIG_PATH = BASE_DIR / "config.json"
 
 
 @dataclass

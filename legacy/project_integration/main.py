@@ -1,9 +1,8 @@
-# main.py
-from config import load_config
-from appsflyer_client import AppsFlyerClient
-from integration_service import IntegrationService
+from src.config import load_config
+from src.appsflyer_client import AppsFlyerClient
+from src.integration_service import IntegrationService
 
-
+# TODO  //fatel69967@gusronk.com qwe1qwe metabase
 def main() -> None:
     cfg = load_config()
 

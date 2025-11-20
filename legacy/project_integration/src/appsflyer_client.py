@@ -11,7 +11,7 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-from config import AppConfig
+from .config import AppConfig
 
 BASE_URL = "https://hq1.appsflyer.com"
 AGG_MIN_INTERVAL_SEC = 65  # 1 запрос/мин на (app, report)
