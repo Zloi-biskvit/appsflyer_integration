@@ -1,0 +1,35 @@
+create table appsflyer
+(
+    id                                     serial
+        primary key,
+    date                                   timestamp not Null,
+    country                                text not null ,
+    agency_pmd                             text,
+    media_source                           text,
+    campaign                               text not null ,
+    impressions                            integer,
+    clicks                                 integer,
+    ctr                                    text,
+    installs                               integer,
+    conversion_rate                        text,
+    sessions                               integer,
+    loyal_users                            integer,
+    loyal_users_per_install                numeric,
+    total_revenue                          numeric,
+    total_cost                             numeric,
+    roi                                    numeric,
+    arpu                                   numeric,
+    avg_ecpi                               numeric,
+    af_complete_registration_unique_users  integer,
+    af_complete_registration_event_counter integer,
+    af_complete_registration_sales_usd     numeric,
+    af_purchase_unique_users               integer,
+    af_purchase_event_counter              integer,
+    af_purchase_sales_usd                  numeric,
+    app_id                                 text not null,
+    app_name                               text,
+    app_platform                           text,
+    report_type                            text,
+    constraint appsflyer_pk
+        unique (date, app_id, campaign, country)
+);
