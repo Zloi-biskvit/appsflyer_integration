@@ -96,9 +96,9 @@ class IntegrationService:
         """
         for report_type in self._config.agg_report_types:
             print(f"\n=== AGG {report_type} ===")
-            all_rows: List[Dict[str, Any]] = []
 
             for idx, app in enumerate(self._config.apps, 1):
+                all_rows: List[Dict[str, Any]] = []
                 print(f"[{idx}/{len(self._config.apps)}] {app.name} ({app.id})")
                 try:
                     rows = self._client.fetch_agg_report(app, report_type)
