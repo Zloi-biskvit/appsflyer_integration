@@ -17,22 +17,13 @@ from urllib3.util.retry import Retry
 # ===============================
 apps: List[Dict[str, str]] = [
 
-        {'id': 'id1434091635', 'name': 'Black Lines', 'platform': 'ios'},
-        {'id': 'id6743713912', 'name': 'MotivaRise', 'platform': 'ios'},
-        {'id': 'id6746459914', 'name': 'Glyphoria', 'platform': 'ios'},
+
         {'id': 'id6747419978', 'name': 'Mount Quizmore', 'platform': 'ios'},
         {'id': 'id6747675833', 'name': 'Written in Stone', 'platform': 'ios'},
-        {'id': 'id6747964884', 'name': 'SoundsScape', 'platform': 'ios'},
-        {'id': 'id6748456624', 'name': 'AviaQR', 'platform': 'ios'},
-        {'id': 'id6748908145', 'name': 'Bubloonies', 'platform': 'ios'},
-        {'id': 'id6749228997', 'name': 'Flagleap', 'platform': 'ios'},
         {'id': 'id6749614124', 'name': 'GlyphsQuest', 'platform': 'ios'},
         {'id': 'id6751264734', 'name': "Fysherman's Key", 'platform': 'ios'},
         {'id': 'id6751265804', 'name': 'AirCroco Bombino', 'platform': 'ios'},
-        {'id': 'id6751882513', 'name': 'Updraft Balloon', 'platform': 'ios'},
-        {'id': 'id6752244390', 'name': 'OceaniaMoons', 'platform': 'ios'},
         {'id': 'id6752688000', 'name': 'Rabbit Trails', 'platform': 'ios'},
-        {'id': 'id6752852232', 'name': 'DropsFlavor', 'platform': 'ios'},
         {'id': 'id6752889529', 'name': 'Carrae Ball', 'platform': 'ios'},
         {'id': 'id6753283611', 'name': 'Sky Lores', 'platform': 'ios'},
         {'id': 'id6753668687', 'name': 'CheckYouFerma', 'platform': 'ios'},
@@ -43,7 +34,10 @@ apps: List[Dict[str, str]] = [
         {'id': 'id6754025975', 'name': 'SearchMyFormula', 'platform': 'ios'},
         {'id': 'id6754026899', 'name': 'Bon-Bon Story Quest', 'platform': 'ios'},
         {'id': 'id6754033791', 'name': 'Olymera Elements', 'platform': 'ios'},
-        {'id': 'id6754906767', 'name': 'KiloCalcAndy', 'platform': 'ios'}
+        {'id': 'id6754906767', 'name': 'KiloCalcAndy', 'platform': 'ios'},
+        {'id': 'id6754922371', 'name': 'Zeus Score', 'platform': 'ios'},
+        {'id': 'id6754936687', 'name': 'StreetsSmarts', 'platform': 'ios'},
+        {'id': 'id6754958094', 'name': 'CipaManage', 'platform': 'ios'}
     ]
 
 
@@ -55,8 +49,8 @@ AGG_REPORT_TYPES = [
     "geo_by_date_report"
 ]
 
-FROM_DATE = "2025-11-10"
-TO_DATE   = "2025-11-16"
+FROM_DATE = "2025-11-17"
+TO_DATE   = "2025-11-23"
 TIMEZONE  = "UTC"
 RETARGETING = "false"
 

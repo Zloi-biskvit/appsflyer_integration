@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   db:
     image: postgres:16
@@ -21,12 +19,26 @@ services:
     ports:
       - "3000:3000"
     environment:
-      # Metabase внутренняя БД (по умолчанию h2, для начала можно не трогать)
       MB_DB_FILE: /metabase.db
-      # Далее ты через веб-интерфейс сам подключишься к Postgres (db:5432)
     volumes:
       - metabase_data:/metabase-data
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - db
 
 volumes:
   db_data:
   metabase_data:
+  grafana_data:
+
