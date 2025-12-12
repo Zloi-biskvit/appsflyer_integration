@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f359f9e8-238a-413f-96bb-84af494c9477" name="Changes" comment="Попытки сделать интеграцию">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f359f9e8-238a-413f-96bb-84af494c9477" name="Changes" comment="Ver 04.12">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legacy/project_integration/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/project_integration/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legacy/project_integration/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/project_integration/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/sasha_folder/Ver2.py" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/sasha_folder/Ver2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/sasha_folder/Ver3.py" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/sasha_folder/Ver3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/sasha_folder/report/daily_report_2025-08-01_2025-10-30_ALL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/sasha_folder/report/1/daily_report_2025-08-01_2025-10-30_ALL.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/sasha_folder/report/daily_report_2025-10-01_2025-10-31_ALL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/sasha_folder/report/1/daily_report_2025-10-01_2025-10-31_ALL.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/sasha_folder/report/daily_report_2025-10-27_2025-11-02_ALL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/sasha_folder/report/1/daily_report_2025-10-27_2025-11-02_ALL.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/sasha_folder/report/geo_by_date_report_2025-10-01_2025-10-31_ALL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/sasha_folder/report/1/geo_by_date_report_2025-10-01_2025-10-31_ALL.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/sasha_folder/report/geo_by_date_report_2025-10-27_2025-11-02_ALL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/sasha_folder/report/1/geo_by_date_report_2025-10-27_2025-11-02_ALL.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/sasha_folder/report/geo_by_date_report_2025-11-01_2025-11-13_ALL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/sasha_folder/report/1/geo_by_date_report_2025-11-01_2025-11-13_ALL.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/sasha_folder/report/geo_by_date_report_2025-11-10_2025-11-16_ALL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/sasha_folder/report/1/geo_by_date_report_2025-11-10_2025-11-16_ALL.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/sasha_folder/report/geo_report_2025-10-01_2025-10-31_ALL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/sasha_folder/report/1/geo_report_2025-10-01_2025-10-31_ALL.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/legacy/sasha_folder/report/geo_report_2025-10-27_2025-11-02_ALL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/sasha_folder/report/1/geo_report_2025-10-27_2025-11-02_ALL.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763386700914</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Ver 04.12">
+      <option name="closed" value="true" />
+      <created>1764852887187</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1764852887187</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -334,6 +330,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
     <MESSAGE value="Попытки сделать интеграцию" />
-    <option name="LAST_COMMIT_MESSAGE" value="Попытки сделать интеграцию" />
+    <MESSAGE value="Ver 04.12" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ver 04.12" />
   </component>
 </project>
