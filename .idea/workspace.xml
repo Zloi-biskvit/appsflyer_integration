@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f359f9e8-238a-413f-96bb-84af494c9477" name="Changes" comment="Ver 12.12">
-      <change afterPath="$PROJECT_DIR$/legacy/project_integration/sklad.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legacy/project_integration/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/project_integration/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/legacy/project_integration/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/project_integration/main.py" afterDir="false" />
@@ -320,22 +319,20 @@
       <option name="project" value="LOCAL" />
       <updated>1765557541766</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Ver 12.12">
+      <option name="closed" value="true" />
+      <created>1766057078750</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1766057078750</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="02bf8d43-3cce-4b8d-a788-3465797a9e81" value="TOOL_WINDOW" />
-      </map>
-    </option>
     <option name="TAB_STATES">
       <map>
-        <entry key="02bf8d43-3cce-4b8d-a788-3465797a9e81">
-          <value>
-            <State />
-          </value>
-        </entry>
         <entry key="MAIN">
           <value>
             <State />
