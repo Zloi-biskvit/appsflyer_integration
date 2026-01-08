@@ -23,8 +23,8 @@
   "agg_report_types": [
     "geo_by_date_report"
   ],
-  "from_date": "2025-12-22",
-  "to_date": "2025-12-23",
+  "from_date": "2025-12-05",
+  "to_date": "2026-01-08",
   "timezone": "UTC",
   "retargeting": "false",
 
