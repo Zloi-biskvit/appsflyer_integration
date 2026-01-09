@@ -1,6 +1,0 @@
-../.env
-reports/
-__pycache__/
-*.pyc
-pg_data/
-grafana_data/
